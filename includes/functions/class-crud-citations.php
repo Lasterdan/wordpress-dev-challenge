@@ -1,6 +1,12 @@
 <?php
 class Crud_Citations
 {
+    /**
+     *
+     * @param  int $post_id, array $var
+     * @return  boolean
+     *
+     */
     public static function set_query_citation($post_id, $var)
     {
         global $wpdb;
@@ -11,6 +17,14 @@ class Crud_Citations
 
         return $wpdb->get_results($wpdb->prepare("SELECT ".$fields." from ".$wpdb->prefix."citations WHERE post_ID = %d", array($post_id)));
     }
+    /**
+     *
+     * Return the content
+     *
+     * @param  array $object
+     * @return  string
+     *
+     */
     public static function get_content($object)
     {
         foreach($object as $item)
@@ -18,6 +32,14 @@ class Crud_Citations
             return $item->citation_content;
         }
     }
+    /**
+     *
+     * Set the content
+     *
+     * @param  array $params
+     * @return  boolean
+     *
+     */
     public static function set_content($params)
     {
         global $wpdb;
