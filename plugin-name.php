@@ -88,7 +88,8 @@ if ( ! class_exists( 'plugin_name' ) ) {
 			// Load custom functions and hooks
 			require_once __DIR__ . '/includes/includes.php';
 
-			register_activation_hook(__FILE__, 'IS_Activator::create_table_citations');
+			register_activation_hook(__FILE__, 'Activator::create_table_citations');
+			register_activation_hook(__FILE__, 'Activator::create_table_urls');
 		}
 
 		/**
